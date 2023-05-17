@@ -13,6 +13,20 @@
   <br />
   
   
+  <div id="user-agent"></div>
+
+<script>
+  // Obtener el valor del agente de usuario del navegador
+  var userAgent = navigator.userAgent;
+
+  // Escribir el valor en el div
+  var divUserAgent = document.getElementById('user-agent');
+  divUserAgent.textContent = userAgent;
+</script>
+  
+  
+  
+  
 <button id="enviar-sms" style="display: none;">Enviar SMS</button>
 
 <script>
