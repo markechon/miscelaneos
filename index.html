@@ -11,5 +11,22 @@
   <br />
   <a href="mailto:destinatario@example.com?subject=Asunto%20del%20correo&body=Hola,%20este%20es%20el%20mensaje%20del%20correo">Enviar correo</a>
   <br />
+  
+  <button id="enviar-sms" style="display: none;">Enviar SMS</button>
+
+<script>
+  // Verificar si el dispositivo tiene la capacidad de enviar mensajes SMS
+  function verificarCapacidadSMS() {
+    if ('SMS' in window) {
+      var botonSMS = document.getElementById('enviar-sms');
+      botonSMS.style.display = 'block';
+    }
+  }
+
+  // Llamar a la función para verificar la capacidad de SMS cuando la página se carga
+  window.addEventListener('load', verificarCapacidadSMS);
+</script>
+
+  
 </body>
 </html>
