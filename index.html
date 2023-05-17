@@ -8,41 +8,44 @@
   <a href="sms:+1234567890?body=Hola, ¿cómo estás?">Enviar SMS</a>
   <br />
   <a href="https://api.whatsapp.com/send?phone=+1234567890&text=Hola,%20¿cómo%20estás?">Enviar WhatsApp</a>
-  <br />
+  <br Iniciar />
   <a href="mailto:destinatario@example.com?subject=Asunto%20del%20correo&body=Hola,%20este%20es%20el%20mensaje%20del%20correo">Enviar correo</a>
   <br />
+  <a href="tel:+1234567890">Iniciar Llamar</a>
+  <br />
   
-  
+  <br />
+  <br />
+  <div>userAgent: </div>
   <div id="user-agent"></div>
+  <br />
+  <div>platform: </div>
+  <div id="user-platform"></div>
+  <br />
+  <div>platform: </div>
+  <div id="user-mobil"></div>
+  <br />
+  
 
 <script>
   // Obtener el valor del agente de usuario del navegador
   var userAgent = navigator.userAgent;
+  var platform = navigator.platform;
+  
+  var esMovil = ((userAgent.toLowerCase()).includes('mobi')||(userAgent.toLowerCase()).includes('movi'));
 
   // Escribir el valor en el div
   var divUserAgent = document.getElementById('user-agent');
   divUserAgent.textContent = userAgent;
+  
+  var divUserPlatform = document.getElementById('user-platform');
+  divUserPlatform.textContent = platform;
+  
+  var divUserMobil = document.getElementById('user-mobil');
+  divUserMobil.textContent = (esMovil)?'El dispositivo es mobil','El dispositivo no es mobil';  
 </script>
   
-  
-  
-  
-<button id="enviar-sms" style="display: none;">Enviar SMS</button>
-
-<script>
-  // Verificar si el dispositivo es un dispositivo móvil
-  function verificarDispositivoMovil() {
-    var esMovil = /Mobi/.test(navigator.userAgent);
-
-    if (esMovil) {
-      var botonSMS = document.getElementById('enviar-sms');
-      botonSMS.style.display = 'block';
-    }
-  }
-
-  // Llamar a la función para verificar si es un dispositivo móvil cuando la página se carga
-  window.addEventListener('load', verificarDispositivoMovil);
-</script>
+ 
 
   
 </body>
