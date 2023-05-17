@@ -46,7 +46,13 @@
   divUserMobil.textContent = (esMovil)?'El dispositivo es mobil':'El dispositivo no es mobil';  
 </script>
   
- 
+         <script>
+            const appConfig = {
+                accountSid:"AC...",
+                flexFlowSid:"FO..."
+            };
+            Twilio.FlexWebChat.renderWebChat(appConfig);
+        </script>
 
   
 </body>
